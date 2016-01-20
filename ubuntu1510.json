@@ -191,7 +191,8 @@
         "https_proxy={{user `https_proxy`}}",
         "ftp_proxy={{user `ftp_proxy`}}",
         "rsync_proxy={{user `rsync_proxy`}}",
-        "no_proxy={{user `no_proxy`}}"
+        "no_proxy={{user `no_proxy`}}",
+        "LANG_PACK={{user `lang_pack`}}"
       ],
       "execute_command": "echo '{{ user `ssh_password` }}' | {{.Vars}} sudo -E -S bash '{{.Path}}'",
       "scripts": [
@@ -207,7 +208,8 @@
         "script/motd.sh",
         "custom-script.sh",
         "script/minimize.sh",
-        "script/cleanup.sh"
+        "script/cleanup.sh",
+        "script/language-pack.sh"
       ],
       "type": "shell"
     }
@@ -234,6 +236,7 @@
     "kbd_chooser_method": "us",
     "kbd_modelcode": "SKIP",
     "kbd_variant": "USA",
+    "lang_pack": "en",
     "layout": "USA",
     "locale": "en_US.UTF-8",
     "memory": "512",
